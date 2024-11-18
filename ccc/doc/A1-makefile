@@ -1,0 +1,63 @@
+
+* ccc: makefile 裡，如何進入一個子資料夾，做些動作後再離開該資料夾
+
+ChatGPT: https://chatgpt.com/c/673ae07a-4128-8012-bfe4-f29e454eee24
+
+
+在 Makefile 中，你可以透過以下方式進入一個子資料夾，執行一些操作，然後再回到原資料夾：
+
+### 範例 Makefile
+
+```makefile
+.PHONY: all enter-subdir
+
+all: enter-subdir
+	echo "完成所有動作"
+
+enter-subdir:
+	@echo "進入子資料夾"
+	cd subdir && $(MAKE) do-something
+	@echo "回到原資料夾"
+
+.PHONY: do-something
+
+do-something:
+	@echo "在子資料夾執行動作"
+```
+
+### 說明
+
+1. **`cd` 和 `&&` 的使用**：
+   - `cd subdir && $(MAKE) do-something` 表示先進入 `subdir` 資料夾，再執行目標 `do-something`。
+   - 使用 `&&` 確保只有前一個指令成功時，後面的指令才會執行。
+
+2. **`@` 的作用**：
+   - `@` 用於隱藏指令輸出，讓 Makefile 更清晰。
+
+3. **回到原資料夾**：
+   - `cd` 指令只會影響當前 shell，並不會改變 Makefile 所處的資料夾。
+
+4. **`$(MAKE)`**：
+   - 確保在子資料夾中執行的是 `make`，可以正確傳遞參數。
+
+### 假設目錄結構
+
+```
+.
+├── Makefile
+└── subdir/
+    └── Makefile
+```
+
+### 子資料夾的 Makefile
+
+在 `subdir/Makefile` 中可以定義具體的行為，例如：
+
+```makefile
+.PHONY: do-something
+
+do-something:
+	@echo "正在子資料夾執行動作"
+```
+
+這樣你就可以在子資料夾中進行操作，並確保流程結束後返回原資料夾執行後續指令。
