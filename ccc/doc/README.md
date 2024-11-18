@@ -5,3 +5,5 @@
 * [瑞士蘇黎世理工 ETH Zürich 的 pulp 團隊與 croc 開源教學處理器](01-crocPulp.md)
 * [如何建置 croc 專案，產生可以給晶圓廠代工的 RISC-V MCU](02-crocMakeGds.md)
 * [如何用 Verilator 跑 croc 專案模擬](03-crocVerilator.md)
+* [結語 -- 透過 CROC 理解開源 EDA 的發展](04-crocToEDA.md)
+
