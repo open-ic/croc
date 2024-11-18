@@ -1,4 +1,4 @@
-# 瑞士蘇黎世理工 ETH Zürich 的 pulp 
+# 瑞士蘇黎世理工 ETH Zürich 的 pulp 團隊與 croc 開源教學處理器
 
 * 演講投影片：[Designing Linux-capable systems using open EDA tools](https://pulp-platform.org/docs/coscup2024/phsauter_coscup24.pdf), Philippe Sauter at Integrated Systems Laboratory (ETH Zürich).
     * https://github.com/pulp-platform

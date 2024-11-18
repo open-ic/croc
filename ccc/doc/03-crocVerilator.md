@@ -1,4 +1,4 @@
-# croc -- verilator 模擬
+# 如何用 Verilator 跑 croc 專案模擬
 
 1. 如果 verilator/ 資料夾中已經有 croc.f 檔案，先刪除之
 2. 輸入 make verilator
